@@ -35,9 +35,13 @@ public class UserResources {
     public ResponseEntity<UserDTO> insert(@RequestBody UserDTO objDTO){
         User obj = service.fromDto(objDTO);
         obj = service.insert(obj);
-
         return ResponseEntity.created(URI.create("/users/" + obj.getId())).build();
+    }
 
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Void> delete(@PathVariable String id){
+        service.delete(id);
+        return ResponseEntity.noContent().build();
     }
 
 }
