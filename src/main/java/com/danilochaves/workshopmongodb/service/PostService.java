@@ -17,10 +17,10 @@ public class PostService {
     @Autowired
     private PostRepository repository;
 
-//    public List<Post> findAll(){
-//        List<Post> list = repository.findAll();
-//        return list;
-//    }
+    public List<Post> findAll(){
+        List<Post> list = repository.findAll();
+        return list;
+    }
 
     public Post findById(String id){
        Optional<Post> obj = repository.findById(id);
