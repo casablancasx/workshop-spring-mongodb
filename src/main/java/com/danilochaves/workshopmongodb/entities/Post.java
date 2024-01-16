@@ -2,6 +2,7 @@ package com.danilochaves.workshopmongodb.entities;
 
 import com.danilochaves.workshopmongodb.dto.AuthorDTO;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
@@ -14,6 +15,8 @@ public class Post {
     private LocalDate date;
     private String title;
     private String body;
+
+    @DBRef(lazy = true)
     private AuthorDTO author;
 
 
